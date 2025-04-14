@@ -18,6 +18,7 @@ public class Main {
             boolean wordGuessed = false;
             int attempts = 3;
 
+
             while (attempts > 0 && !wordGuessed){
                 System.out.println("Your Guess: ");
                 String playerGuess = sc.nextLine();
@@ -33,7 +34,15 @@ public class Main {
                     System.out.println("Attempts Remaining: "+attempts);
                 }
             }
+            if (!wordGuessed){
+                System.out.println("The correct word was "+ word);
+            }
+            System.out.println("Your score is: "+playerScore);
+            System.out.println("Do you want to play again? (YES/NO)");
+            String response = sc.nextLine();
+            stillPlaying = response.equalsIgnoreCase("yes");
         }
+        System.out.println("Your final score is "+ playerScore);
 
     }
 
